@@ -1,6 +1,8 @@
 import React from 'react';
 import {useState,useEffect} from "react";
 
+import Comment from "./Comment";
+
 
 const Comments = () => {
 
@@ -14,13 +16,11 @@ const Comments = () => {
     }, []);
 
     return (
-        <div>
             <ul>
                 {
-                  comments.map(value => <li>{value.body}</li>)
+                  comments.map(value => <li key={value.id}><Comment item={value}/></li>)
                 }
             </ul>
-        </div>
     );
 };
 

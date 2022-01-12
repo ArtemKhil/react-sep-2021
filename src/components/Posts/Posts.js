@@ -1,6 +1,8 @@
 import React from 'react';
 import {useState,useEffect} from "react";
 
+import Post from "./Post";
+
 
 const Posts = () => {
 
@@ -14,13 +16,11 @@ const Posts = () => {
 
 
     return (
-        <div>
             <ul>
                 {
-                  posts.map(value => <li>{value.title}</li>)
+                  posts.map(value => <li key={value.id}><Post item={value}/></li>)
                 }
             </ul>
-        </div>
     );
 };
 
