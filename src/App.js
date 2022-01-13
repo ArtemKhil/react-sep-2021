@@ -1,10 +1,11 @@
 import './App.css';
+import Flights from "./components/Flights/Flights";
 
 function App() {
   return (
     <div>
 
-      <h1>Hello React</h1>
+    <Flights/>
 
     </div>
 
