@@ -1,15 +1,33 @@
-import './App.css';
+import {useState} from "react";
+
+import Users from "./components/Users/Users";
+import UserDetails from "./components/UserDetails/UserDetails";
+import Posts from "./components/Posts/Posts";
+import css from "./App.module.css";
 
 function App() {
-  return (
-    <div>
+    const [user, setUser] = useState(null);
 
-      <h1>Hello React</h1>
+    const getUser = (user) => {
+        setUser(user);
+    };
 
-    </div>
 
+    return (
+        <div>
 
-  );
+            <div className={css.wrap}>
+                <Users getUser={getUser}/>
+                <UserDetails user={user}/>
+            </div>
+
+            <div>
+                <Posts/>
+            </div>
+
+        </div>
+
+    );
 }
 
 export default App;
