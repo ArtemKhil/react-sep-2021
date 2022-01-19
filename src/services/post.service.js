@@ -2,5 +2,5 @@ import {axiosService} from "./axios.service";
 import {urls} from "../configs/urls";
 
 export const postService = {
-    getUserById: (id) => axiosService.get(`${urls.posts}?userId=${id}`)
+    getUserById: (id) => axiosService.get(`${urls.posts}?userId=${id}`).then(value => value.data)
 };

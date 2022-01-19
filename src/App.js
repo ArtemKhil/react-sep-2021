@@ -4,12 +4,20 @@ import Users from "./components/Users/Users";
 import UserDetails from "./components/UserDetails/UserDetails";
 import Posts from "./components/Posts/Posts";
 import css from "./App.module.css";
+import {postService} from "./services/post.service";
 
 function App() {
+
     const [user, setUser] = useState(null);
+    const [posts, setPosts] = useState([]);
 
     const getUser = (user) => {
         setUser(user);
+        setPosts([]);
+    };
+
+    const getUserId = (id) => {
+        postService.getUserById(id).then(value => setPosts(...[value]));
     };
 
 
@@ -18,11 +26,11 @@ function App() {
 
             <div className={css.wrap}>
                 <Users getUser={getUser}/>
-                <UserDetails user={user}/>
+                {user && <UserDetails user={user} getUserId={getUserId}/>}
             </div>
 
             <div>
-                <Posts/>
+                {!!posts.length && <Posts posts={posts}/>}
             </div>
 
         </div>
