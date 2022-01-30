@@ -1,0 +1,6 @@
+.PostsPage{
+    display: flex;
+}
+.PostsPage>div{
+    max-width:50vw;
+}

@@ -1,11 +1,28 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
+import {useState, useEffect} from "react";
+
+import {postService} from "../../services";
+import {PostItem} from "../../components/PostItem/PostItem";
+import css from './PostsPage.module.css'
 
 const PostsPage = () => {
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        postService.getAll().then(value => setPosts([...value]))
+    }, [])
+
     return (
-        <div>
-            PostsPage
-            <Outlet/>
+        <div className={css.PostsPage}>
+            <div>
+                {posts.map(post=><PostItem key={post.id} post={post}/>)}
+            </div>
+            <div>
+                <Outlet/>
+            </div>
+
+
         </div>
     );
 };

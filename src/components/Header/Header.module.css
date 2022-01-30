@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: black;
+}
+
+.Header [class='active']{
+    color: darkmagenta;
+}
+
+a{
+    font-size: 40px;
+    text-decoration: none;
+    color: snow;
+}
