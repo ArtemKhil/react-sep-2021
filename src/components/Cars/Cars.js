@@ -12,7 +12,9 @@ const Cars = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
+
         dispatch(getAllCars())
+
     },[])
 
 
