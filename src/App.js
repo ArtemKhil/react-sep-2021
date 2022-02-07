@@ -1,16 +1,16 @@
 import './App.css';
-import Flights from "./components/Flights/Flights";
+
 
 function App() {
-  return (
-    <div>
 
-    <Flights/>
+    return (
 
-    </div>
+        <div>
+
+        </div>
 
 
-  );
+    );
 }
 
 export default App;
