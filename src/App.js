@@ -1,10 +1,12 @@
 import './App.css';
+import {Form, Todos} from "./components";
 
 function App() {
   return (
     <div>
 
-      <h1>Hello React</h1>
+      <Form/>
+      <Todos/>
 
     </div>
 
