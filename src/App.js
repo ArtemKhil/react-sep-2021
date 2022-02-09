@@ -1,4 +1,6 @@
 import './App.css';
+import {Movies} from "./components";
+
 
 
 function App() {
@@ -6,6 +8,7 @@ function App() {
     return (
 
         <div>
+            <Movies/>
 
         </div>
 
